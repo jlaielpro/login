@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create account · BD</title>
+    <meta name="description" content="Create your BD account." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="auth-body">
+    <main class="auth-shell">
+      <div class="auth-top">
+        <a class="brand" href="/login.html">
+          <span class="brand-mark">BD</span>
+          <span>BD Accounts</span>
+        </a>
+        <a class="btn btn-ghost btn-sm" href="/admin.html">Admin panel</a>
+      </div>
+
+      <section class="card" aria-labelledby="title">
+        <header class="card-head">
+          <h1 id="title">Create your account</h1>
+          <p>It takes less than a minute.</p>
+        </header>
+
+        <div id="formError" class="alert alert-error" role="alert" hidden></div>
+
+        <form id="signupForm" class="auth-form" novalidate>
+          <label class="field">
+            <span>Full name</span>
+            <input
+              type="text"
+              name="name"
+              autocomplete="name"
+              placeholder="Jane Doe"
+              maxlength="80"
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span>Email</span>
+            <input
+              type="email"
+              name="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              maxlength="254"
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span>Password</span>
+            <input
+              type="password"
+              name="password"
+              autocomplete="new-password"
+              placeholder="At least 8 characters"
+              minlength="8"
+              required
+            />
+            <p class="hint">Use 8 characters or more.</p>
+          </label>
+
+          <label class="field">
+            <span>Confirm password</span>
+            <input
+              type="password"
+              name="confirm"
+              autocomplete="new-password"
+              placeholder="Repeat your password"
+              required
+            />
+          </label>
+
+          <button class="btn btn-primary btn-block" type="submit">
+            <span class="btn-label">Create account</span>
+            <span class="spinner" hidden></span>
+          </button>
+        </form>
+
+        <p class="switch">
+          Already have an account? <a href="/login.html">Sign in</a>
+        </p>
+      </section>
+
+      <p class="footnote">Your details are stored locally. Nothing is sent to third parties.</p>
+    </main>
+
+    <script type="module" src="/js/signup.js"></script>
+  </body>
+</html>

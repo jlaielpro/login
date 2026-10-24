@@ -1,0 +1,15 @@
+{
+  "name": "bd",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sign up, login and admin dashboard backed by a local SQLite database.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@supabase/server": "^1.9.2",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.118.0"
+  }
+}

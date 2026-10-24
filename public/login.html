@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign in · BD</title>
+    <meta name="description" content="Sign in to your BD account." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="auth-body">
+    <main class="auth-shell">
+      <div class="auth-top">
+        <a class="brand" href="/login.html">
+          <span class="brand-mark">BD</span>
+          <span>BD Accounts</span>
+        </a>
+        <a class="btn btn-ghost btn-sm" href="/admin.html">Admin panel</a>
+      </div>
+
+      <section class="card" aria-labelledby="title">
+        <header class="card-head">
+          <h1 id="title">Welcome back</h1>
+          <p>Sign in to continue to your account.</p>
+        </header>
+
+        <div id="formNotice" class="alert alert-ok" role="status" hidden></div>
+        <div id="formError" class="alert alert-error" role="alert" hidden></div>
+
+        <form id="loginForm" class="auth-form" novalidate>
+          <label class="field">
+            <span>Email</span>
+            <input
+              type="email"
+              name="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span>Password</span>
+            <input
+              type="password"
+              name="password"
+              autocomplete="current-password"
+              placeholder="••••••••"
+              required
+            />
+          </label>
+
+          <button class="btn btn-primary btn-block" type="submit">
+            <span class="btn-label">Sign in</span>
+            <span class="spinner" hidden></span>
+          </button>
+        </form>
+
+        <div id="session" class="session-panel" hidden>
+          <div class="avatar" id="avatar" aria-hidden="true">?</div>
+          <h2>You're signed in</h2>
+          <p id="sessionEmail"></p>
+          <p id="sessionNote" class="alert alert-error session-note" role="alert" hidden></p>
+          <div class="session-actions">
+            <a id="adminLink" class="btn btn-primary" href="/admin.html" hidden>
+              Open admin dashboard
+            </a>
+            <button id="signOutBtn" class="btn btn-ghost" type="button">Sign out</button>
+          </div>
+        </div>
+
+        <p class="switch" id="switchLine">
+          New here? <a href="/signup.html">Create an account</a>
+        </p>
+      </section>
+
+      <p class="footnote">Accounts are stored in a local SQLite database.</p>
+    </main>
+
+    <script type="module" src="/js/login.js"></script>
+  </body>
+</html>

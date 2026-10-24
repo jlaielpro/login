@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin · BD</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="admin-body">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="/admin.html">
+          <span class="brand-mark">BD</span>
+          <span>BD Admin</span>
+        </a>
+        <div class="topbar-right">
+          <a class="btn btn-ghost btn-sm nav-active" href="/admin.html" aria-current="page">
+            Admin panel
+          </a>
+          <span class="who" id="adminEmail">admin</span>
+          <button id="refreshBtn" class="btn btn-ghost btn-sm" type="button">Refresh</button>
+          <button id="logoutBtn" class="btn btn-ghost btn-sm" type="button">Sign out</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <section class="page-head">
+        <h1>Registered users</h1>
+        <p>Everyone who has signed up on your website.</p>
+      </section>
+
+      <section class="stats" aria-label="Summary">
+        <div class="stat">
+          <span class="stat-label">Total users</span>
+          <strong id="statTotal">—</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Admins</span>
+          <strong id="statAdmins">—</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Signed up today</span>
+          <strong id="statToday">—</strong>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="usersTitle">
+        <div class="panel-head">
+          <h2 id="usersTitle">Users</h2>
+          <div class="search">
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search name or email"
+              aria-label="Search users"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div id="tableError" class="alert alert-error" role="alert" hidden></div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Role</th>
+                <th scope="col">Signed up</th>
+                <th scope="col">Last login</th>
+                <th scope="col" class="ta-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="usersBody"></tbody>
+          </table>
+          <div id="loadingState" class="empty">Loading users…</div>
+          <div id="emptyState" class="empty" hidden>No accounts yet.</div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status"></div>
+
+    <dialog id="deleteDialog">
+      <div class="dialog-inner">
+        <h2>Delete this account?</h2>
+        <p id="deleteText">This permanently removes the user and signs them out everywhere.</p>
+        <div class="dialog-actions">
+          <button id="cancelDelete" class="btn btn-ghost" type="button">Cancel</button>
+          <button id="confirmDelete" class="btn btn-danger" type="button">Delete account</button>
+        </div>
+      </div>
+    </dialog>
+
+    <script type="module" src="/js/admin.js"></script>
+  </body>
+</html>
