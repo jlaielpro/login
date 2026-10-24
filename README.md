@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BD — sign up, login & admin
 
 A small, dependency-free login website with a real database behind it.
@@ -89,3 +90,6 @@ Only do that on a network you trust — the app serves plain HTTP locally.
   `HttpOnly` + `SameSite=Lax`.
 - This is a local demo app. For public deployment, put it behind HTTPS (and set
   a reverse proxy that terminates TLS) before sharing it with anyone.
+=======
+# login
+>>>>>>> 37c38c7db6aa81bfce64bd3a44b9ec713fcdd6bb
